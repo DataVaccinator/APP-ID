@@ -1,0 +1,53 @@
+= APP-ID Platform
+:author: DataVaccinator Team
+:email: info@datavaccinator.com
+:doctype: book
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== What is APP-ID?
+
+The APP-ID can work as a password for you, suitable for several use cases. For example in health, finance and personal applications and services.
+
+It was initially developed as assisting tool for https://www.datavaccinator.com[DataVaccinator] customers. There it works as a password for all company data encryption. If it is lost, all data is lost.
+
+But people lose passwords. This is the reason the APP-ID service was developed. It...
+
+. Generates a secure app-id password
+. Tells you the secure app-id password if you lost it
+
+Please look into this repositories _docs_ folder for more information about APP-ID.
+
+== Implementation state
+
+*This is not a finished product and not yet production ready.* The current state is showing a proof of concept (POC) and implements only the basic functionality. As soon as this service is to go live, we will add the missing functionality.
+
+This is the current state:
+
+[cols="1,2"]
+|=======
+|feature	|status
+
+|Generate APP-ID | done
+|Request APP-ID | done
+|Setup helper script | -
+|Setup documentation | -
+|Admin-Interface | -
+|Supported languages | DE, EN, (FR prepared)
+|Supported countries¹ | DE, LU
+|=======
+
+¹ Requires passport example image and passport ID validation RegEx (see init.php).
+
+== General information
+
+The APP-ID service is based on *PHP* and *MySQL*. We suggest to run some *Apache* or *nginx* web server on a *Linux* operating system to host the application. Thus, it can be run on any *LAMP* stack (Linux, Apache, MySQL and PHP). We suggest to use some CentOS Server or Ubuntu Server operating system as we have good experience with them.
+
+The application will need some public IP address with DNS record.
+
+The website handles multiple languages and allows end users to generate and request their app-ids.
