@@ -1,0 +1,14 @@
+# ignore all temporary logfiles and other files
+*log.txt
+*.log
+*#
+*.bak
+*.kate-swp
+
+# ignore windows thumbnails from gallery view:
+Thumbs.db
+
+# others
+/.project
+*.code-workspace
+.vscode
