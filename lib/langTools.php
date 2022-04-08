@@ -9,7 +9,7 @@ $lang["intPleaseChoose"]["EN"] = "Please choose...";
 
 /**
 * @return Array: the array should contain the following (key/value) paires (LanguageCode => value, Result => value)
-* @param LangID int: it represents an entry in the lang array (Used for translation/localization)
+* @param LangID it represents an entry in the lang array (Used for translation/localization)
 * @param $LanguageCode String: Language code like EN for English, FR for French, DE for German.
 */
 function GetLgEntry($LangID, $LanguageCode){
@@ -30,7 +30,7 @@ function GetLgEntry($LangID, $LanguageCode){
 /**
 * returns the translated value if available otherwise it defaults to english
 * @return String
-* @param LangID int: it represents an entry in the lang array (Used for translation/localization)
+* @param LangID it represents an entry in the lang array (Used for translation/localization)
 * @param $LanguageCode String: Language code like EN for English, FR for French, DE for German.
 */
 function Translate($LangID, $LanguageCode){
@@ -204,25 +204,6 @@ function lgs($LangID, $LanguageCode, $Find = "", $Replace = "", $Find2 = "", $Re
         error_log("INFO: Unknown translated string for LangID $LangID");
         return ""; 
     }
-
-    // replace special placeholders
-    $tokenSearch  = Array("<rgm>",
-                          "<rgbs>",
-                          "<rgbp>",
-                          "<rgp>",
-                          "<rgmp>",
-                          "<rgmo>",
-                          "<rgb>",
-                          "<rgx>");
-    $tokenReplace = Array($lang[-20][$LanguageCode],
-                          $lang[-21][$LanguageCode],
-                          $lang[-22][$LanguageCode],
-                          $lang[-23][$LanguageCode],
-                          $lang[-24][$LanguageCode],
-                          $lang[-25][$LanguageCode],
-                          $lang[-27][$LanguageCode],
-                          $lang[-29][$LanguageCode]);
-    $Result = str_replace($tokenSearch, $tokenReplace, $Result);
 
     if (substr($Find, 0, 1) == "[") {
         $Result = str_replace($Find, $Replace, $Result);
